@@ -1,0 +1,56 @@
+<!-- Programmer: Alfred Williams
+	 Project: Deliverable 5
+	 Date: 02/20/2020
+	 Description: Java Script Form Validation -->
+
+<!--Doctype and language-->
+<!DOCTYPE html>
+<html lang="en">
+
+	<!--Beginning of Head tag-->
+	<head>
+
+		<!-- CSS styling -->
+		<link rel="stylesheet" href="stylesedited.css">
+
+	<!--Script Beggining -->
+	<script>	
+		function validateForm() {
+			var input = [];
+			input[0] = document.getElementById("firstname").value; 
+			input[1] = document.getElementById("lastname").value;
+			input[2] = document.getElementById("email").value;
+			
+			for (var i = 0; i < input.length; i++) {
+
+				if (input[i] == "") {
+					alert("Please enter information for email or name");
+					return false;
+				} 
+			}
+		} 
+	</script> <!--Script Ending-->
+
+	<!--Title Display-->
+	<title> ISM 4300 Deliverable 5 </title>
+	</head><!--End of head tag-->
+
+	<body>
+		<!--Display text a the top of the page-->
+		<h1> Customer Information </h1>
+
+		<!--Return the output from the user defined function-->
+		<form name="myForm" action="/action_page.php" onsubmit="return validateForm()" method="post">
+
+			First Name:<br> <!-- Label to show user to input first name -->
+			<input type="text" id="firstname"> <br> <!--Text box for user input -->
+			Last Name: <br> <!-- Label to show user to input last name -->
+			<input type="text" id="lastname"> <br> <!--Text box for user input -->
+			Email: <br> <!-- Label to show user to input email -->
+			<input type="email" id="email"> <br> <!--Text box for user input -->
+			<br> <!--Line break-->
+			<input type="submit" value="Submit"><!--Button to take user input -->
+		</form> <!--End of form tag-->
+	</body> <!--End of body-->
+
+</html> <!---End of HTML tag-->
